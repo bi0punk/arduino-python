@@ -11,7 +11,7 @@ DallasTemperature sensors(&oneWire);
 
 byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
 IPAddress ip(192, 168, 1, 100);  // Dirección IP estática del Arduino
-IPAddress server(192, 168, 1, 87);
+IPAddress server(192, 168, 1, 129);
 EthernetClient client;
 
 unsigned long lastMillis = 0;
