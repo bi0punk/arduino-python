@@ -14,13 +14,17 @@ def get_sensor_data():
 @app.route('/sensor', methods=['POST'])
 def receive_sensor_data():
     data = request.json
+
+    print(data)
+    
     if data and 'temperature' in data:
         temperature = float(data['temperature'])
         save_sensor_data(temperature)
         print(temperature)
         check_temperature(temperature, 18.0)  # Cambia 18.0 por el valor límite que desees
         return 'Datos del sensor recibidos'
-    return ''
+    else:
+        return 'error'
 
 
 def save_sensor_data(temperature):
