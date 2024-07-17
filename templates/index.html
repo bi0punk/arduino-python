@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos del Sensor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Datos del Sensor</h1>
+
+    <h2>Sensor Exterior (DHT22)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Temperatura (°C)</th>
+                <th>Humedad (%)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data_dht22 %}
+                <tr>
+                    <td>{{ row['Fecha'] }}</td>
+                    <td>{{ row['Temperatura (°C)'] }}</td>
+                    <td>{{ row['Humedad (%)'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Sensor Interior (DHT11)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Temperatura (°C)</th>
+                <th>Humedad (%)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data_dht11 %}
+                <tr>
+                    <td>{{ row['Fecha'] }}</td>
+                    <td>{{ row['Temperatura (°C)'] }}</td>
+                    <td>{{ row['Humedad (%)'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
